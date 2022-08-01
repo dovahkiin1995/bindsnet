@@ -211,7 +211,7 @@ for epoch in range(n_epochs):
     train_loader = dl(dataset=datasetTrain, batch_size=args.batch_size, shuffle=True, num_workers=0)
 
     pbar_training = tqdm(total=n_train*args.batch_size)
-    fifty_count = 0
+    target_count_var = 0
     for step, batch in enumerate(train_loader):
         if step > n_train:
             break
@@ -241,9 +241,9 @@ for epoch in range(n_epochs):
                 val
             )
             if val >= target_batch_accuracy:
-                fifty_count+=1
-                print('Times above target accuracy: ', fifty_count)
-                if fifty_count == target_count:
+                target_count_var+=1
+                print('Times above target accuracy: ', target_count_var)
+                if target_count_var == target_count:
                     flag = 1
                     break
 
