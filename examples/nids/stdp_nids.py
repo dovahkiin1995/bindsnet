@@ -33,7 +33,7 @@ from bindsnet.utils import get_square_assignments, get_square_weights
 from torch.utils.data import DataLoader as dl
 parser = argparse.ArgumentParser()
 parser.add_argument("--seed", type=int, default=0)
-parser.add_argument("--n_neurons", type=int, default=400)
+parser.add_argument("--n_neurons", type=int, default=500)
 parser.add_argument("--batch_size", type=int, default=2)
 parser.add_argument("--n_epochs", type=int, default=1)
 parser.add_argument("--n_test", type=int, default=20000)
@@ -43,7 +43,7 @@ parser.add_argument("--update_steps", type=int, default=10)  #Modify along with 
 parser.add_argument("--exc", type=float, default=22.5)
 parser.add_argument("--inh", type=float, default=120)
 parser.add_argument("--theta_plus", type=float, default=0.04)
-parser.add_argument("--time", type=int, default=300)
+parser.add_argument("--time", type=int, default=500)
 parser.add_argument("--dt", type=int, default=1.0)
 parser.add_argument("--intensity", type=float, default=256)
 parser.add_argument("--progress_interval", type=int, default=10)
@@ -74,7 +74,7 @@ train = args.train
 plot = args.plot
 gpu = args.gpu
 target_batch_accuracy = 60
-target_count = 200
+target_count = 100
 update_interval = update_steps * batch_size
 
 device = "cpu"
